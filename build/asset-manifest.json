@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/pond-nj/CyberSecurity-Test/static/css/main.825e3115.css",
-    "main.js": "/pond-nj/CyberSecurity-Test/static/js/main.f982df52.js",
-    "static/js/787.0a9f5c2f.chunk.js": "/pond-nj/CyberSecurity-Test/static/js/787.0a9f5c2f.chunk.js",
-    "static/media/mc.xml": "/pond-nj/CyberSecurity-Test/static/media/mc.01ed63c31faa5727bce5.xml",
-    "index.html": "/pond-nj/CyberSecurity-Test/index.html",
-    "main.825e3115.css.map": "/pond-nj/CyberSecurity-Test/static/css/main.825e3115.css.map",
-    "main.f982df52.js.map": "/pond-nj/CyberSecurity-Test/static/js/main.f982df52.js.map",
-    "787.0a9f5c2f.chunk.js.map": "/pond-nj/CyberSecurity-Test/static/js/787.0a9f5c2f.chunk.js.map"
+    "main.css": "/CyberSecurity-Test/static/css/main.825e3115.css",
+    "main.js": "/CyberSecurity-Test/static/js/main.0f64b990.js",
+    "static/js/787.0a9f5c2f.chunk.js": "/CyberSecurity-Test/static/js/787.0a9f5c2f.chunk.js",
+    "static/media/mc.xml": "/CyberSecurity-Test/static/media/mc.01ed63c31faa5727bce5.xml",
+    "index.html": "/CyberSecurity-Test/index.html",
+    "main.825e3115.css.map": "/CyberSecurity-Test/static/css/main.825e3115.css.map",
+    "main.0f64b990.js.map": "/CyberSecurity-Test/static/js/main.0f64b990.js.map",
+    "787.0a9f5c2f.chunk.js.map": "/CyberSecurity-Test/static/js/787.0a9f5c2f.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.825e3115.css",
-    "static/js/main.f982df52.js"
+    "static/js/main.0f64b990.js"
   ]
 }
