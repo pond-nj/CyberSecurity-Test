@@ -1,0 +1,114 @@
+ol {
+  list-style-type: lower-roman;
+  padding-left: 30px;  
+}
+
+/* header */
+#header{	
+  font-family: verdana, sans-serif;
+  font-size: 18px;
+  color: #041C7D;
+  font-style: normal;
+  font-weight: bold;
+  font-variant: normal;
+  text-align: center;
+  letter-spacing: 0px;
+  line-height: 30px;
+}
+/* content div */
+#content{
+	overflow: auto;	
+	word-wrap: break-word;
+}
+
+/* Quiz questions */
+#content #quiz-question{	
+  font-family: verdana, sans-serif;
+  font-size: 18px;
+  color: #086A87;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-align: left;
+  letter-spacing: 0px;
+  line-height: 25px; 
+  
+}
+
+/* Quiz image */
+#quiz-img{
+	overflow: auto;
+}
+
+/* Quiz MC choices */
+.quiz-option-image{
+	height: 23px; 
+	width: 23px;
+}
+
+.quiz-radio-label{	
+
+}
+.quiz-radio-text{
+  font-family: verdana, sans-serif;
+  font-size: 18px;
+  color: #086A87;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-align: left;
+  letter-spacing: 0px;
+
+}
+/* submit bar */
+#submit-bar{
+	position: absolute;   
+
+}
+
+/* Quiz progress text */
+#progress-text{
+  font-family: verdana, sans-serif;
+  font-size: 36px;
+  color: #041C7D;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  
+  letter-spacing: 0px;
+  line-height: 36px;
+ 
+}
+
+#correct-text{
+  font-family: verdana, sans-serif;
+  font-size: 36px;
+  color: #041C7D;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  
+  letter-spacing: 0px;
+  line-height: 36px;
+ 
+}
+
+#wrong-text{
+  font-family: verdana, sans-serif;
+  font-size: 36px;
+  color: #041C7D;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  
+  letter-spacing: 0px;
+  line-height: 36px;
+ 
+}
+
+
+
+
+
+
+

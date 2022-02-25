@@ -1,0 +1,250 @@
+body{
+	line-height: 1.3em;
+	font-size: 20px;	
+}
+
+h1,h2,h3,h4,h5,h6{	
+	font-weight: bold;
+}
+h2 { font-size: 1.4em; margin: .75em 0 }
+h3 { font-size: 1.17em; margin: .83em 0 }
+
+p{
+	line-height: 1.3em;
+	font-size: 0.9em;
+	width: 98%;
+}
+
+p.instruction{
+	width: 85%;
+	font-size: 0.9em;
+	margin: 10px 0;
+    color: chocolate;
+}
+
+div#wrapper{
+	left: 5%;
+	width: 90%;
+	position: relative;	
+	padding-left: 0;
+	padding-right: 0;
+}
+
+div#footer{
+	background-color: transparent;
+}
+
+section{
+	padding: 10px 20px;
+	border: 3px solid #666666;
+	border-radius: 10px;
+	margin-bottom: 20px;
+}
+
+/***********************/
+/* section.instruction */
+/***********************/
+section.instruction ol.instruction{
+	list-style-type: square;
+	font-size: 0.9em;
+	padding: 0 30px;
+	margin-top: 30px;
+	margin-bottom: 50px;
+}
+section.instruction p.status{
+	border-top: 3px dotted #666666;
+	padding: 10px 0;
+}
+
+/********************/
+/* section.question */
+/********************/
+section.question{	
+	opacity: 1;
+}
+
+section.feedback{
+	opacity: 0;
+	display: none;
+
+}
+
+section.feedback label{
+	width: 85%;
+	font-size: 0.9em;
+	margin: 10px 0;
+}
+
+section.question p.instruction{
+	margin-bottom: 0;
+}
+
+section.question p.question-number{
+	width: 85%;
+	font-size: 0.6em;
+	margin-bottom: 20px;
+}
+
+section.question p.question{
+	width: 85%;
+	margin-bottom: 5px;
+}
+
+section.question p.messages{	
+	width: 85%;
+	font-size: 0.8em;
+	font-weight: bold;	
+	margin-left: 45px;
+	margin-top: 10px;
+}
+
+section.question p.feedback{
+	background-color: beige;
+	width: 85%;
+	font-size: 0.8em;
+	font-weight: bold;	
+	padding-top: 17px;
+	padding-left: 2.5em;
+	padding-right: 1em;
+	padding-bottom: 12px;
+	margin-top: -0.5em;
+	border: 1px solid #DDDDDD;	
+	border-radius: 5px;
+	display: none;
+}
+
+section.question img.questionImg{
+	width: 100%;
+	height: auto;
+	max-width: 320px;
+	margin-right: 5px;
+}
+
+section.question form.required{
+	background-color: #C46F59;
+	-webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+	border-radius: 10px;
+}
+
+section.question form.mc{	
+	width: 98%;
+	position: relative;
+	padding: 5px;
+}
+
+section.question form.mc label{
+	width: 85%;		/* Mobile version */
+	font-size: 0.8em;
+	line-height: 1.2em;
+}
+
+section.question form.mc label.hovereffect:hover,
+section.question form.mc label.hover_effect,
+section.question form.mc label.ui-radio-on{
+	background-color: #DDDDDD;
+}
+
+section.question form.mc label.hovereffect:active{
+	background-color: #EBC48B;
+}
+
+section.question form.mc label:after{
+	border-color: #335657;
+}
+
+section.question form.mc label.incorrect:after{
+	border-color: #A33238;
+}
+
+section.question form.mc label.correct:before{
+	content: url('images/correct_m.gif');
+}
+
+section.question form.mc label.incorrect:before{
+	content: url('images/incorrect_m.gif');
+}
+
+div#wrapper button.controlBtn{
+	float: right;
+	width: 20%;	
+	min-width: 220px;
+	font-size: 0.8em;
+	/* display: none; */
+	position: relative;
+	margin-right: 0;
+	right: 0;
+}
+
+div#wrapper button.controlBtn:active{
+	background-color: #335657;
+}
+
+section.feedback  form.feedback textarea{
+	width: 80%;
+	height: 50px;
+	margin: 5px 0;
+}
+
+input[type="submit"]{
+	height: 30px;
+	width: 30%;	
+	max-width: 100px;
+}
+
+.hover {
+	-webkit-user-select: none;
+	-webkit-touch-callout: none;        
+}
+
+/**************************/
+/* Override JQuery mobile */
+/**************************/
+.ui-header  .ui-title{
+	margin: 0 10%;
+	width: 80%;
+	padding-bottom: .5em;
+}
+.ui-header  h1.ui-title { font-size: 2em; }
+.ui-header h2.ui-title  { font-size: 1.4em; }
+.ui-header h3.ui-title  { font-size: 1.17em; }
+
+.ui-checkbox-off:after, .ui-btn.ui-radio-off:after{	opacity: .6; }
+
+
+.ui-header .ui-btn-left, .ui-header .ui-btn-right{ font-size: 0.7em; }
+
+div.ui-radio{ margin: 10px 0; }
+
+/*********************************************************/
+/* Colours: #335657; #AAC789; #EBC48B; #C46F59; #A33238; */
+/*********************************************************/
+
+/**
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    contenteditable attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that are clearfixed.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+.cf:before,
+.cf:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.cf:after {
+    clear: both;
+}
+
+/**
+ * For IE 6/7 only
+ * Include this rule to trigger hasLayout and contain floats.
+ */
+.cf {
+    *zoom: 1;
+}
