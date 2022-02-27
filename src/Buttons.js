@@ -77,7 +77,7 @@ const Submit = ({props}) => {
                 console.log( props.surveyResponse[0] )
                 console.log( props.surveyResponse[1] )
 
-                var jsondata = {"score": props.value,"brandAwareness": props.surveyResponse[0], "securityAwareness": props.selectedAnswer+1};
+                var jsondata = {"score": props.value,"securityAwareness": props.surveyResponse[0], "brandAwareness": props.selectedAnswer+1};
                 var settings = {
                     "async": true,
                     "crossDomain": true,
