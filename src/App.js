@@ -1,10 +1,7 @@
 import Header from './Header'
-import Instruction from './Instruction'
-import Question from './Question'
+import PageManager from './PageManager'
 import React from 'react'
 import axios from 'axios'
-
-//import './App.css';
 
 import XMLData from './xml/mc.xml'
 import './mcstyle.css'
@@ -18,6 +15,12 @@ import './mcstyle.css'
     Responder can comeback to edit choice
 
     collect survey on user feeling, send data to server
+
+    ## change survey to a new module
+
+    ## change state that's string but is supposed to be int to int
+
+    ## create page manager
 */
 
 class App extends React.Component {
@@ -26,13 +29,45 @@ class App extends React.Component {
     super(props)
     this.state = {
       questionsList: [],
+      feedbackList: [], //xmlnode that contains feedback data
+      surveyList: [], //
+
       questionNum: -1, //0 to total no. of question-1, 0 is the first question
+      surveyNum: -1,
       value: 0,
+      surveyResponse: [],
+
       selectedValue: -1,
       selectedAnswer: -1,
       pressSubmit: 0,
-      feedbackList: [] //node that contains feedback data
+      dataSubmit: -1
     }
+  }
+
+  setDataSubmit = (state) => {
+    this.setState({
+      dataSubmit: state
+    })
+  }
+
+  updateSurveyResponse = (response) => {
+    this.setState({
+      surveyResponse: [...this.state.surveyResponse, parseInt(response)]
+    })
+  }
+
+  goToNextSurvey = () => {
+    this.setState({
+      surveyNum: this.state.surveyNum + 1,
+      selectedAnswer: -1,
+      pressSubmit: 0
+    })
+  }
+
+  skipQuestions = (questionNum) => {
+    this.setState({
+      questionNum: questionNum
+    })
   }
 
   setSubmit = (state) => {
@@ -43,13 +78,13 @@ class App extends React.Component {
 
   incrementValue = (value) => {
     this.setState({
-      value: this.state.value + value
+      value: this.state.value + parseInt(value)
     })
   }
 
   setSelectedValue = (value) => {
     this.setState({
-      selectedValue: value
+      selectedValue: parseInt(value)
     })
   }
 
@@ -68,15 +103,16 @@ class App extends React.Component {
     })
   }
 
-  goToPrevQuestion = () => { this.setState({
-      questionNum : this.state.questionNum - 1, 
-      selectedAnswer: -1,
-      pressSubmit: 0
-    })
-  }
+
+  // goToPrevQuestion = () => { this.setState({
+  //     questionNum : this.state.questionNum - 1, 
+  //     selectedAnswer: -1,
+  //     pressSubmit: 0
+  //   })
+  // }
 
   setSelectedAnswer = (answer) => { this.setState({
-      selectedAnswer: answer,
+      selectedAnswer: parseInt(answer),
       pressSubmit: 0
      })
   }
@@ -94,10 +130,13 @@ class App extends React.Component {
 
       var questionsList = Array.from(xml.getElementsByTagName("question"))
       var feedbackList = Array.from(xml.getElementsByTagName("feedbacks"))
-      console.log( feedbackList[0] )
+      var surveyList = Array.from(xml.getElementsByTagName("surveyText"))
+      console.log( surveyList )
+
       this.setState({
           questionsList: questionsList,
-          feedbackList: feedbackList
+          feedbackList: feedbackList,
+          surveyList: surveyList
       })
     }).catch( e => {
       console.log(e)
@@ -105,15 +144,11 @@ class App extends React.Component {
   }
 
   render(){
-    console.log( this.state )
     return (
       <div className="App">
         <Header/>
         <div id ="wrapper" data-role="content">
-          <Instruction
-            questionNum={this.state.questionNum}
-            goToNextQuestion={this.goToNextQuestion}/>
-          <Question
+          <PageManager
             questionNum={this.state.questionNum}
             questionsList={this.state.questionsList}
             selectedAnswer={this.state.selectedAnswer}
@@ -122,15 +157,23 @@ class App extends React.Component {
             pressSubmit={this.state.pressSubmit}
             totalQuestions={this.state.questionsList.length}
             feedbackList={this.state.feedbackList}
+            surveyNum={this.state.surveyNum}
+            surveyList={this.state.surveyList}
+            totalSurvey={this.state.surveyList.length}
+            surveyResponse={this.state.surveyResponse}
+            dataSubmit={this.state.dataSubmit}
             
             goToNextQuestion={this.goToNextQuestion}
-            goToPrevQuestion={this.goToPrevQuestion}
+            // goToPrevQuestion={this.goToPrevQuestion}
             setSelectedAnswer={this.setSelectedAnswer}
             resetSelected={this.resetSelected}
             incrementValue={this.incrementValue}
             setSelectedValue={this.setSelectedValue}
             setSubmit={this.setSubmit}
-            
+            skipQuestions={this.skipQuestions}
+            goToNextSurvey={this.goToNextSurvey}
+            updateSurveyResponse={this.updateSurveyResponse}
+            setDataSubmit={this.setDataSubmit}
           />
         </div>
       </div>

@@ -1,6 +1,6 @@
 import React from "react"
 
-const Instruction = (props) => {
+const Instruction = ({props}) => {
 
 	if( props.questionNum == -1 ){
 		return (
@@ -17,9 +17,7 @@ const Instruction = (props) => {
 					{/*<p className="status">Loading your exercises...</p>*/ }
 					<p className="status">Please press "start" to begin.</p>
 
-					<Button
-						questionNum={props.questionNum}
-						onClick={props.goToNextQuestion}/>
+					<Start props={props}/>
 				</section>
 			</>
 			)
@@ -28,14 +26,14 @@ const Instruction = (props) => {
 	}
 }
 
-const Button = (props) => {
+const Start = ({props}) => {
 	return (<button
                 name="control"
                 className="controlBtn ui-btn-right ui-btn ui-btn-b ui-btn-inline ui-corner-all ui-mini"
 				style={{display: "inline-block"}}
                 id="controlBtn-start"
                 value="start"
-				onClick={props.onClick}>
+				onClick={props.goToNextQuestion}>
 					Start</button>
 	)
 }
