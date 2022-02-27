@@ -66,14 +66,24 @@
 
 	<feedbacks>
 		<weakText threshold="5">0-5 = weak</weakText>
-		<weakFeedback>Feedback: you are noob</weakFeedback>
+		<weakFeedback>Feedback: weak security. Must improve more on...</weakFeedback>
 
 		<moderateText threshold="10">6-10 = moderate</moderateText>
-		<moderateFeedback>Feedback: you are avg.</moderateFeedback>
+		<moderateFeedback>Feedback: moderate security. Must improve more on...</moderateFeedback>
 
 		<strongText>11+ = strong</strongText>
-		<strongFeedback>Feedback: you are good</strongFeedback>
-
+		<strongFeedback>Feedback: strong security! Could improve more on...</strongFeedback>
 	</feedbacks>
+
+	<surveyFeedback>
+		<surveyText number="1">
+		After using the Cyber Security assessment tool, to what extent does the tool increase your awareness on Cyber Security? (from the scale of 1(extremely low) to 5 (extremely high))
+		</surveyText>
+
+		<surveyText number="2">
+		After using the Cyber Security assessment tool, to what extent do you want to use the Cyber Security service? (from the scale of 1(extremely low) to 5 (extremely high))
+		</surveyText>
+
+	</surveyFeedback>
 
 </questions>
