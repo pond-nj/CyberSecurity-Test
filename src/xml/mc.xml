@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <questions number="3" randomquestion="true" branch="false">
 	<instruction></instruction>
+	
+	<question number="0">
+	[TEST] Hello World [TEST]
+	</question>
 
 	<question number="1">
 	Does your organization provide VPN and Office Laptops for work from home to ensure safer transfer of work information?
