@@ -7,72 +7,59 @@
 	</question>
 
 	<question number="2">
-	Does the company require employees to secure their home wifi to avoid breaches?
-	</question>
-
-	<question number="3">
-	Does the company limit access of company information to the relevant 
-	departments/employees to ensure minimal data leakage?
-	</question>
-
-	<question number="4">
 	Do you have specific training on cybersecurity for employees?
 	</question>
 
-	<question number="5">
+	<question number="3">
 	Is there encryption on company data for security? Both in servers and in-transit to prevent breaches and interceptions?
 	</question>
 
-	<question number="6">
+	<question number="4">
 	Do you have network segregation in your company to maintain security in important internal networks?
 	</question>
 
-	<question number="7">
+	<question number="5">
 	Does your company have any monitoring in place for suspicious activities on the company servers/networks to minimize response time to cyber attacks?
 	</question>
 
-	<question number="8">
+	<question number="6">
 	Does your company change the password (Wifi network, employee password) over a period of time regularly to help reduce intruders?
 	</question>
 
-	<question number="9">
+	<question number="7">
 	To prevent exposure of company data to unprotected networks, does the company ban the use of public wifi or devices that are used to access company data? 
 	</question>
 
-	<question number="10">
-	Is your company aware that breaches can be conducted through IoT (Internet of Things, meaning any device such as smart fridge, thermometer, microwave, etc that are
+	<question number="8">
+	Is your company aware that breaches can be conducted through IoT (Internet of Things, meaning any device such as smart fridge, printers, projectors etc that are
 	connected to the internet)?
 	</question>
 
+	<question number="9">
+	Do your employees know never to give sensitive information to supervisors via unsecured channels (external messaging apps such as WhatsApp, WeChat)?
+	</question>
+
+	<question number="10">
+	Does your company have a response plan to react to any suspicious behavior (internally and externally)?
+	</question>
+
 	<question number="11">
-	Do your employees know never to give sensitive information to supervisors via unsecured channels?
+	Does your organization monitor the egress(outgoing) of sensitive and confidential data in order to prevent data leakage?
 	</question>
 
 	<question number="12">
-	Does your company have a response plan in case of a cybercrime incident?
-	</question>
-
-	<question number="13">
-	Does your organization monitor the access to intellectual property in order to prevent unauthorized staff from accessing IP?
-	</question>
-
-	<question number="14">
-	Does your company have a real-time incident response system in place to monitor any suspicious behavior on company servers and cloud storage that contains sensitive data?
-	</question>
-
-	<question number="15">
-	The malware attacks can be made from an email attachment or file-sharing. If the cyber attacks occur, does the company have a malware removal plan for the incident?
+	The malware attacks can be made from an email attachment or file-sharing. If the cyber attacks occur, does the company have a malware protection/ detection/ removal plan for the incident?
 	</question>
 
 	<feedbacks>
-		<weakText threshold="5">0-5 = weak</weakText>
-		<weakFeedback>Feedback: weak security. Must improve more on...</weakFeedback>
+		<weakText threshold="5">0-5 = weaker</weakText>
+		<weakFeedback>Feedback: weaker security. Must improve more on...</weakFeedback>
 
 		<moderateText threshold="10">6-10 = moderate</moderateText>
 		<moderateFeedback>Feedback: moderate security. Must improve more on...</moderateFeedback>
 
-		<strongText>11+ = strong</strongText>
-		<strongFeedback>Feedback: strong security! Could improve more on...</strongFeedback>
+		<strongText>11+ = mature</strongText>
+		<strongFeedback>Feedback: mature security! Could improve more on...</strongFeedback>
 	</feedbacks>
 
 	<surveyFeedback>
