@@ -3,7 +3,7 @@ import PageManager from './PageManager'
 import React from 'react'
 import axios from 'axios'
 
-import XMLData from './xml/mc.xml'
+// import XMLData from './xml/mc.xml'
 import './mcstyle.css'
 
 
@@ -122,9 +122,10 @@ class App extends React.Component {
   }
 
   fetchQuestionsWithAxios(){
-    axios.get(XMLData,
+    axios.get("https://raw.githubusercontent.com/pond-nj/CyberSecurity-Test/main/src/xml/mc.xml",
       {"Content-Type":"application/xml; charset=utf-8"
     }).then((response)=>{
+      console.log(response.data)
       const parser = new DOMParser()
       var xml = parser.parseFromString(response.data,"text/xml")
 
