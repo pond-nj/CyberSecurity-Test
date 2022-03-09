@@ -52,13 +52,24 @@
 	</question>
 
 	<feedbacks>
-		<weakText threshold="5">0-5 = weaker</weakText>
-		<weakFeedback>Feedback: weaker security. Must improve more on...</weakFeedback>
+		<weakerText threshold="4">0-4 = weaker</weakerText>
+		<weakFeedback>Feedback: weaker security. 
+		How can company do to improve Cyber Security network?
+			-Consistently update software to get the newest security patch
+			-Get an over-the-counter Antivirus Program. 
+			It may not be the answer to all but can be a cheaper alternative to have some defense against malware and viruses.
+			-Train and develop a team dedicated to Cyber Security. 
+			They are vital for a company to have a mature Cyber Security
+			-Hire a Cyber Security Consultant. 
+			One of the best ways to protect your company from Cyber Attacks is to hire a company dedicated to Cyber Security.
+			Protiviti Inc. is a global consulting organization and a subsidiary of Robert Half International, a human resource consulting firm. Protiviti Hong Kong is now anticipating business growth in a specific sector of Technology Consulting, Cyber Security. Contact Mr. Michael Pang,
+			Managing Director, at +852 2238 0499 for more details.
+		</weakFeedback>
 
-		<moderateText threshold="10">6-10 = moderate</moderateText>
+		<moderateText threshold="8">5-8 = moderate</moderateText>
 		<moderateFeedback>Feedback: moderate security. Must improve more on...</moderateFeedback>
 
-		<strongText>11+ = mature</strongText>
+		<matureText>9+ = mature</matureText>
 		<strongFeedback>Feedback: mature security! Could improve more on...</strongFeedback>
 	</feedbacks>
 
