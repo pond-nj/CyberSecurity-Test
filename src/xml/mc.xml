@@ -52,24 +52,24 @@
 	</question>
 
 	<feedbacks>
-		<weakerText threshold="4">0-4 = weaker</weakerText>
-		<weakFeedback>Feedback: weaker security. 
-			How can company do to improve Cyber Security network?
-				-Consistently update software to get the newest security patch
-				-Get an over-the-counter Antivirus Program. 
-				It may not be the answer to all but can be a cheaper alternative to have some defense against malware and viruses.
-				-Train and develop a team dedicated to Cyber Security. 
-				They are vital for a company to have a mature Cyber Security
-				-Hire a Cyber Security Consultant. 
-				One of the best ways to protect your company from Cyber Attacks is to hire a company dedicated to Cyber Security.
-				Protiviti Inc. is a global consulting organization and a subsidiary of Robert Half International, a human resource consulting firm. Protiviti Hong Kong is now anticipating business growth in a specific sector of Technology Consulting, Cyber Security. Contact Mr. Michael Pang,
-				Managing Director, at +852 2238 0499 for more details.
-	</weakFeedback>
+		<weakText threshold="4">0-4 = weaker</weakText>
+		<weakFeedback>Feedback: weaker security. &lt;br/ &gt;
+			How can company do to improve Cyber Security network? &lt;br/ &gt;
+				-Consistently update software to get the newest security patch &lt;br/ &gt;
+				-Get an over-the-counter Antivirus Program. &lt;br/ &gt;
+				It may not be the answer to all but can be a cheaper alternative to have some defense against malware and viruses. &lt;br/ &gt;
+				-Train and develop a team dedicated to Cyber Security. &lt;br/ &gt;
+				They are vital for a company to have a mature Cyber Security &lt;br/ &gt;
+				-Hire a Cyber Security Consultant. &lt;br/ &gt;
+				One of the best ways to protect your company from Cyber Attacks is to hire a company dedicated to Cyber Security. &lt;br/ &gt;
+				Protiviti Inc. is a global consulting organization and a subsidiary of Robert Half International, a human resource consulting firm. Protiviti Hong Kong is now anticipating business growth in a specific sector of Technology Consulting, Cyber Security. Contact Mr. Michael Pang, &lt;br/ &gt;
+				Managing Director, at +852 2238 0499 for more details. &lt;br/ &gt;
+		</weakFeedback>
 
 		<moderateText threshold="8">5-8 = moderate</moderateText>
 		<moderateFeedback>Feedback: moderate security. Must improve more on...</moderateFeedback>
 
-		<matureText>9+ = mature</matureText>
+		<strongText>9+ = mature</strongText>
 		<strongFeedback>Feedback: mature security! Could improve more on...</strongFeedback>
 	</feedbacks>
 

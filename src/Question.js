@@ -4,6 +4,7 @@ import Buttons from "./Buttons"
 
 //contain question text
 const DisplayText = ({props}) => {
+
     if( props.questionNum != -1 && props.questionNum != props.totalQuestions ){ //-1 is start menu
         return (<>
             <p className="question-number">
