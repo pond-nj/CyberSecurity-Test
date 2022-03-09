@@ -52,8 +52,8 @@
 	</question>
 
 	<feedbacks>
-		<weakerText threshold="4">0-4 = weaker</weakerText>
-		<weakFeedback>Feedback: weaker security. 
+		<weakText threshold="4">0-4 = weaker</weakText>
+		<weakFeedback>Feedback: weak security. 
 			How can company do to improve Cyber Security network?
 				-Consistently update software to get the newest security patch
 				-Get an over-the-counter Antivirus Program. 
