@@ -9,16 +9,18 @@ const Results = ({props}) => {
     else if( props.value <= moderateThreshold ){ result = "moderate" }
     else { result = "strong" }
 
-    const showFeedback = () => {
-        const text = props.feedbackList[0].getElementsByTagName(result+"Feedback")[0].textContent
+    const parseBR = (text) => {
         var br = "<br/ >";
-        // console.log(text.split(regex))
         const textArr = text.split(br)
         return textArr.map((line, index) => {
             if( index != textArr.length-1 ) return  (<> {line} <br key={"key_" + index} /> </>)
             else return (<>{line}</>)
         })
     }
+
+    const listArr = Array.from(props.feedbackList[0].getElementsByTagName(result+"Feedback")[0].getElementsByTagName("li")).map((line,index)=>{
+        return <li key={"key_"+index}>{parseBR(line.textContent)}</li>
+    })
 
     return(<>
         <section className="question cf">
@@ -27,7 +29,10 @@ const Results = ({props}) => {
             {/* <p>{props.feedbackList[0].getElementsByTagName("strongText")[0].textContent}</p> */}
             <p>Total Score: {props.value}</p>
             <p>Your company has a {result} security!</p>
-            <p>{showFeedback()}</p>
+            <p>{parseBR(props.feedbackList[0].getElementsByTagName(result+"Feedback")[0].getElementsByTagName("head")[0].textContent)}</p>
+            <ul>
+                {listArr}
+            </ul>
             <p>Please click "Proceed" to proceed to after survey.</p>
         </section>
         <Buttons props={props}/ >

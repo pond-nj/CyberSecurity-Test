@@ -34,6 +34,8 @@ const Next = ({props}) => {
     )
 }
 
+
+
 const Skip = ({props}) => {
     return(<button
         name="control"
@@ -42,7 +44,7 @@ const Skip = ({props}) => {
         value="next"
         onClick={ () => {
             if( props.selectedAnswer != -1 ){
-                props.skipQuestions(14)
+                props.skipQuestions(10)
                 props.resetSelected()
                 props.incrementValue(props.selectedValue)
             } else {
