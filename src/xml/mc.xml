@@ -102,15 +102,30 @@
 		</strongFeedback>
 	</feedbacks>
 
-	<surveyFeedback>
-		<surveyText number="1">
-		After using the Cyber Security assessment tool, to what extent does the tool increase your awareness on Cyber Security? (from the scale of 1(extremely low) to 5 (extremely high))
-		</surveyText>
+	<surveyText number="1">
+	After using the Cyber Security assessment tool, to what extent does the tool increase your awareness on Cyber Security? (from the scale of 1(extremely low) to 5 (extremely high))
+	</surveyText>
 
-		<surveyText number="2">
-		After using the Cyber Security assessment tool, to what extent do you want to use the Cyber Security service within 1 year? (from the scale of 1(extremely low) to 5 (extremely high))
-		</surveyText>
+	<surveyText number="2">
+	After using the Cyber Security assessment tool, to what extent do you want to use the Cyber Security service within 1 year? (from the scale of 1(extremely low) to 5 (extremely high))
+	</surveyText>
 
-	</surveyFeedback>
+	<surveyForm>
+		<industry>
+		Could we know your company industry? (Optional)
+		</industry>
+
+		<position>
+		Could we know your position in the company? (Optional)
+		</position>
+
+		<location>
+		Could you please tell us which city is your company located ? (Optional)
+		</location>
+
+		<comment>
+		Would you like to give us additional feedback? (Optional)
+		</comment>
+	</surveyForm>
 
 </questions>

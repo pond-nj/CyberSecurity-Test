@@ -40,7 +40,38 @@ const FeedBackChoice = ({props}) => {
     </>)
 }
 
+const UserForm = ({props}) => {
+    console.log(props.surveyForm)
+    console.log(props.userIndustry)
+    return(<>
+        <form >
+            <label htmlFor="industry">{props.surveyForm[0].getElementsByTagName("industry")[0].textContent}</label>
+            <input type="text" name="industry" id="industry" value={props.userIndustry} placeholder="industry" onChange={(event)=>{
+                props.setUserInput(0,event.target.value)
+            }}/>
+
+            <label htmlFor="position">{props.surveyForm[0].getElementsByTagName("position")[0].textContent}</label>
+            <input type="text" name="position" id="position" value={props.userPosition} placeholder="position" onChange={(event)=>{
+                props.setUserInput(1,event.target.value)
+            }}/>
+
+            <label htmlFor="location">{props.surveyForm[0].getElementsByTagName("location")[0].textContent}</label>
+            <input type="text" name="location" id="location" value={props.userLocation} placeholder="location" onChange={(event)=>{
+                props.setUserInput(2,event.target.value)
+            }}/>
+
+            <label htmlFor="comment">{props.surveyForm[0].getElementsByTagName("comment")[0].textContent}</label>
+            <textarea cols="40" rows="10" name="comment" id="comment" value={props.userComment} onChange={(event)=>{
+                props.setUserInput(3,event.target.value)
+            }}></textarea>
+        </form>
+    </>)
+
+}
+
 const Survey = ({props}) => {
+    console.log( props.surveyNum )
+    console.log( props.totalSurvey )
 
     if( props.surveyNum < props.totalSurvey ){
         return(<>
@@ -49,13 +80,20 @@ const Survey = ({props}) => {
                 <form className="mc cf" onClick={(event) => {
                     props.setSelectedAnswer(event.target.getAttribute("index"))
                     }}>
-                <FeedBackChoice props={props} />
+                    <FeedBackChoice props={props} />
                 </form>
                 <Messages props={props}/>
             </section>
             <Buttons props={props} />
         </>)
-    }else {
+    }else if( props.surveyNum == props.totalSurvey ){
+        return(<>
+            <section className="question cf">
+                <UserForm props={props} />
+            </section>
+            <Buttons props={props}/>
+        </>)
+    } else {
         
         return(<>
             <section className="question cf">

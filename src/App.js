@@ -31,11 +31,16 @@ class App extends React.Component {
       questionsList: [],
       feedbackList: [], //xmlnode that contains feedback data
       surveyList: [], //
+      surveyForm: [],
 
       questionNum: -1, //0 to total no. of question-1, 0 is the first question
       surveyNum: -1,
       value: 0,
-      surveyResponse: [],
+      surveyResponse: [], //save user's multiple choice response in this array
+      userIndustry: "",
+      userPosition: "",
+      userLocation: "", //save user's text input in this array
+      userComment: "",
 
       selectedValue: -1,
       selectedAnswer: -1,
@@ -44,59 +49,62 @@ class App extends React.Component {
     }
   }
 
-  setDataSubmit = (state) => {
-    this.setState({
+  setUserInput = (index, inputText) => { 
+    if( index == 0) { this.setState({
+      userIndustry: inputText
+    })} else if( index == 1 ){ this.setState({
+      userPosition: inputText
+    })} else if( index == 2 ){this.setState({
+      userLocation: inputText
+    })} else if( index == 3 ){this.setState({
+      userComment: inputText
+    })}
+  }
+
+  setDataSubmit = (state) => { this.setState({
       dataSubmit: state
     })
   }
 
-  updateSurveyResponse = (response) => {
-    this.setState({
+  updateSurveyResponse = (response) => { this.setState({
       surveyResponse: [...this.state.surveyResponse, parseInt(response)]
     })
   }
 
-  goToNextSurvey = () => {
-    this.setState({
+  goToNextSurvey = () => { this.setState({
       surveyNum: this.state.surveyNum + 1,
       selectedAnswer: -1,
       pressSubmit: 0
     })
   }
 
-  skipQuestions = (questionNum) => {
-    this.setState({
+  skipQuestions = (questionNum) => { this.setState({
       questionNum: questionNum
     })
   }
 
-  setSubmit = (state) => {
-    this.setState({
+  setSubmit = (state) => { this.setState({
       pressSubmit: state
     })
   }
 
-  incrementValue = (value) => {
-    this.setState({
+  incrementValue = (value) => { this.setState({
       value: this.state.value + parseInt(value)
     })
   }
 
-  setSelectedValue = (value) => {
-    this.setState({
+  setSelectedValue = (value) => { this.setState({
       selectedValue: parseInt(value)
     })
   }
 
-  resetSelected = () => {
-    this.setState({
+  resetSelected = () => { this.setState({
       selectedAnswer: -1,
       pressSubmit: 0
     })
   }
 
-  goToNextQuestion = () => { 
-    this.setState({
+  goToNextQuestion = () => { this.setState({
       questionNum : this.state.questionNum + 1,
       selectedAnswer: -1,
       pressSubmit: 0
@@ -133,11 +141,13 @@ class App extends React.Component {
       var questionsList = Array.from(xml.getElementsByTagName("question"))
       var feedbackList = Array.from(xml.getElementsByTagName("feedbacks"))
       var surveyList = Array.from(xml.getElementsByTagName("surveyText"))
+      var surveyForm = Array.from(xml.getElementsByTagName("surveyForm"))
 
       this.setState({
           questionsList: questionsList,
           feedbackList: feedbackList,
-          surveyList: surveyList
+          surveyList: surveyList,
+          surveyForm: surveyForm
       })
     }).catch( e => {
       console.log(e)
@@ -162,7 +172,12 @@ class App extends React.Component {
             surveyList={this.state.surveyList}
             totalSurvey={this.state.surveyList.length}
             surveyResponse={this.state.surveyResponse}
+            surveyForm={this.state.surveyForm}
             dataSubmit={this.state.dataSubmit}
+            userIndustry={this.state.userIndustry}
+            userPosition={this.state.userPosition}
+            userLocation={this.state.userLocation}
+            userComment={this.state.userComment}
             
             goToNextQuestion={this.goToNextQuestion}
             // goToPrevQuestion={this.goToPrevQuestion}
@@ -175,6 +190,7 @@ class App extends React.Component {
             goToNextSurvey={this.goToNextSurvey}
             updateSurveyResponse={this.updateSurveyResponse}
             setDataSubmit={this.setDataSubmit}
+            setUserInput={this.setUserInput}
           />
         </div>
       </div>

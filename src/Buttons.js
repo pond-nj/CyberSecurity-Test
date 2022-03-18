@@ -44,7 +44,7 @@ const Skip = ({props}) => {
         value="next"
         onClick={ () => {
             if( props.selectedAnswer != -1 ){
-                props.skipQuestions(10)
+                props.skipQuestions(12)
                 props.resetSelected()
                 props.incrementValue(props.selectedValue)
             } else {
@@ -72,37 +72,36 @@ const Submit = ({props}) => {
     return(<button
         className="controlBtn ui-btn-right ui-btn ui-btn-b ui-btn-inline ui-corner-all ui-mini"
         onClick={ () => {
-            if( props.selectedAnswer != -1 ){
-                props.updateSurveyResponse(props.selectedAnswer+1)
-                props.goToNextSurvey()
+            props.goToNextSurvey()
+            console.log( props.surveyResponse[0] )
+            console.log( props.surveyResponse[1] )
+            console.log( props.userIndustry)
+            console.log( props.userLocation)
+            console.log( props.userPosition)
+            console.log( props.userComment)
 
-                console.log( props.surveyResponse[0] )
-                console.log( props.surveyResponse[1] )
-
-                var jsondata = {"score": props.value,"securityAwareness": props.surveyResponse[0], "brandAwareness": props.selectedAnswer+1};
-                var settings = {
-                    "async": true,
-                    "crossDomain": true,
-                    "url": "https://cybersecuritytest-f559.restdb.io/rest/survey-info",
-                    "method": "POST",
-                    "headers": {
-                        "content-type": "application/json",
-                        "x-apikey": "621a3f2d34fd6215658589f7",
-                        "cache-control": "no-cache"
-                    },
-                    "processData": false,
-                    "data": JSON.stringify(jsondata)
-                }
-                axios(settings).then( (response) => {
-                    if(response.statusText.localeCompare("created") == 1){
-                        console.log( response )
-                        props.setDataSubmit(1)
-                    }
-                })
-            } else {
-                props.setSubmit(1)
+            var jsondata = {"score": props.value,"securityAwareness": props.surveyResponse[0], "brandAwareness": props.surveyResponse[1], "industry": props.userIndustry, "position":props.userPosition, "location":props.userLocation, "comment":props.userComment};
+            var settings = {
+                "async": true,
+                "crossDomain": true,
+                "url": "https://cybersecuritytest-f559.restdb.io/rest/survey-info",
+                "method": "POST",
+                "headers": {
+                    "content-type": "application/json",
+                    "x-apikey": "621a3f2d34fd6215658589f7",
+                    "cache-control": "no-cache"
+                },
+                "processData": false,
+                "data": JSON.stringify(jsondata)
             }
-            
+            axios(settings).then( (response) => {
+                if(response.statusText.localeCompare("created") == 1){
+                    console.log( response )
+                    props.setDataSubmit(1)
+                }
+            }).catch( e => {
+                console.log(e)
+            })
         }}
         >
         Submit
@@ -121,15 +120,16 @@ const ProceedToSurvey = ({props}) => {
 }
 
 const NextSurvey = ({props}) => {
-    console.log("hello")
     return(<button
         className="controlBtn ui-btn-right ui-btn ui-btn-b ui-btn-inline ui-corner-all ui-mini"
         onClick={ () => {
-            if( props.selectedAnswer != -1 ){
-                props.goToNextSurvey()
-                props.updateSurveyResponse(props.selectedAnswer+1)
-            } else {
-                props.setSubmit(1)
+            if( props.surveyNum < props.totalSurvey ){
+                if( props.selectedAnswer != -1 ){
+                    props.goToNextSurvey()
+                    props.updateSurveyResponse(props.selectedAnswer+1)
+                } else {
+                    props.setSubmit(1)
+                }
             }
         }}>
         Next
@@ -150,7 +150,7 @@ const Buttons = ({props}) => {
                 
                 {/* <Previous props={props}/> */}
                 {/* <Log props={props}/> */}
-                {/* <Skip props={props} /> */}
+                <Skip props={props} />
 
                 <Next props = {props}/>
             </div>
@@ -165,7 +165,7 @@ const Buttons = ({props}) => {
                 <ProceedToSurvey props={props}/>
             </div>
         )
-    } else if (props.questionNum > props.totalQuestions && props.surveyNum != props.totalSurvey - 1 ){
+    } else if (props.questionNum > props.totalQuestions && props.surveyNum != props.totalSurvey ){
         return(
             <div
                 id="footer"
@@ -174,7 +174,7 @@ const Buttons = ({props}) => {
                 role="contentinfo">
                 <NextSurvey props={props}/>
             </div>)
-    } else if( props.surveyNum == props.totalSurvey - 1 ){
+    } else if( props.surveyNum == props.totalSurvey ){
         return(<div
                 id="footer"
                 data-role="footer"
