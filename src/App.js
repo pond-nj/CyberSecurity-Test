@@ -37,6 +37,7 @@ class App extends React.Component {
       surveyNum: -1,
       value: 0,
       surveyResponse: [], //save user's multiple choice response in this array
+      userChoice: [],
       userIndustry: "",
       userPosition: "",
       userLocation: "", //save user's text input in this array
@@ -66,6 +67,10 @@ class App extends React.Component {
     })
   }
 
+  updateUserChoice = (response) => { this.setState({
+    userChoice: [...this.state.userChoice, parseInt(response)]
+  })}
+
   updateSurveyResponse = (response) => { this.setState({
       surveyResponse: [...this.state.surveyResponse, parseInt(response)]
     })
@@ -88,7 +93,8 @@ class App extends React.Component {
     })
   }
 
-  incrementValue = (value) => { this.setState({
+  incrementValue = (value) => { 
+    this.setState({
       value: this.state.value + parseInt(value)
     })
   }
@@ -98,8 +104,9 @@ class App extends React.Component {
     })
   }
 
-  resetSelected = () => { this.setState({
+  resetSelected = () => { this.setState({ //for reset selected reset everything
       selectedAnswer: -1,
+      selectedValue: -1,
       pressSubmit: 0
     })
   }
@@ -119,7 +126,8 @@ class App extends React.Component {
   //   })
   // }
 
-  setSelectedAnswer = (answer) => { this.setState({
+  setSelectedAnswer = (answer) => { 
+    this.setState({
       selectedAnswer: parseInt(answer),
       pressSubmit: 0
      })
@@ -178,6 +186,7 @@ class App extends React.Component {
             userPosition={this.state.userPosition}
             userLocation={this.state.userLocation}
             userComment={this.state.userComment}
+            userChoice={this.state.userChoice}
             
             goToNextQuestion={this.goToNextQuestion}
             // goToPrevQuestion={this.goToPrevQuestion}
@@ -191,6 +200,7 @@ class App extends React.Component {
             updateSurveyResponse={this.updateSurveyResponse}
             setDataSubmit={this.setDataSubmit}
             setUserInput={this.setUserInput}
+            updateUserChoice={this.updateUserChoice}
           />
         </div>
       </div>

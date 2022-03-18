@@ -25,6 +25,9 @@ const Next = ({props}) => {
                     props.goToNextQuestion()
                     props.resetSelected()
                     props.incrementValue(props.selectedValue)
+                    props.updateUserChoice(props.selectedValue)
+                    document.getElementById("answer-0").checked="false"
+                    document.getElementById("answer-1").checked="false"
                 } else {
                     props.setSubmit(1)
                 }
@@ -33,8 +36,6 @@ const Next = ({props}) => {
         </button>
     )
 }
-
-
 
 const Skip = ({props}) => {
     return(<button
@@ -62,7 +63,8 @@ const Log = ({props}) => {
         id="controlBtn-next"
         value="next"
         onClick={ () => {
-            console.log(props.state)
+            console.log("value " + props.selectedValue)
+            console.log("answer " + props.selectedAnswer)
         }}>
         Log
     </button>)
@@ -72,15 +74,25 @@ const Submit = ({props}) => {
     return(<button
         className="controlBtn ui-btn-right ui-btn ui-btn-b ui-btn-inline ui-corner-all ui-mini"
         onClick={ () => {
-            props.goToNextSurvey()
-            console.log( props.surveyResponse[0] )
-            console.log( props.surveyResponse[1] )
-            console.log( props.userIndustry)
-            console.log( props.userLocation)
-            console.log( props.userPosition)
-            console.log( props.userComment)
 
-            var jsondata = {"score": props.value,"securityAwareness": props.surveyResponse[0], "brandAwareness": props.surveyResponse[1], "industry": props.userIndustry, "position":props.userPosition, "location":props.userLocation, "comment":props.userComment};
+            var jsondata = {
+                "score": props.value,
+                "securityAwareness": props.surveyResponse[0],
+                "brandAwareness": props.surveyResponse[1],
+                "industry": props.userIndustry,
+                "position":props.userPosition,
+                "location":props.userLocation,
+                "comment":props.userComment
+            }
+
+            for( var i = 0 ; i < props.userChoice.length ; i++ ){
+                jsondata["Q"+(i+1)] = props.userChoice[i]
+            }
+
+            for( var i = props.userChoice.length ; i < 13 ; i++ ){
+                jsondata["Q"+(i+1)] = -1
+            }
+
             var settings = {
                 "async": true,
                 "crossDomain": true,
@@ -95,13 +107,17 @@ const Submit = ({props}) => {
                 "data": JSON.stringify(jsondata)
             }
             axios(settings).then( (response) => {
-                if(response.statusText.localeCompare("created") == 1){
-                    console.log( response )
+                if(response.statusText.localeCompare("Created") == 0){
                     props.setDataSubmit(1)
+                    console.log( response )
+                }else {
+                    console.log( response ) //need update here
                 }
             }).catch( e => {
                 console.log(e)
             })
+
+            props.goToNextSurvey()
         }}
         >
         Submit

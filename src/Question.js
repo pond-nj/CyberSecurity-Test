@@ -22,8 +22,9 @@ const ChoiceList = ({props}) => {
     //console.log(props)
 
     return(
-        <form className="mc cf" onClick={(event) => {
+        <form className="mc cf" onChange={(event) => {
             props.setSelectedAnswer(event.target.getAttribute("index"))
+            console.log(event.target.getAttribute("index"))
             props.setSelectedValue(event.target.getAttribute("index"))
             }}>
             <div className="ui-radio">

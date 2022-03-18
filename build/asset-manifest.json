@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/CyberSecurity-Test/static/css/main.825e3115.css",
-    "main.js": "/CyberSecurity-Test/static/js/main.71e3f72f.js",
+    "main.js": "/CyberSecurity-Test/static/js/main.9f174fbe.js",
     "static/js/787.0a9f5c2f.chunk.js": "/CyberSecurity-Test/static/js/787.0a9f5c2f.chunk.js",
     "index.html": "/CyberSecurity-Test/index.html",
     "main.825e3115.css.map": "/CyberSecurity-Test/static/css/main.825e3115.css.map",
-    "main.71e3f72f.js.map": "/CyberSecurity-Test/static/js/main.71e3f72f.js.map",
+    "main.9f174fbe.js.map": "/CyberSecurity-Test/static/js/main.9f174fbe.js.map",
     "787.0a9f5c2f.chunk.js.map": "/CyberSecurity-Test/static/js/787.0a9f5c2f.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.825e3115.css",
-    "static/js/main.71e3f72f.js"
+    "static/js/main.9f174fbe.js"
   ]
 }

@@ -41,8 +41,6 @@ const FeedBackChoice = ({props}) => {
 }
 
 const UserForm = ({props}) => {
-    console.log(props.surveyForm)
-    console.log(props.userIndustry)
     return(<>
         <form >
             <label htmlFor="industry">{props.surveyForm[0].getElementsByTagName("industry")[0].textContent}</label>
@@ -70,8 +68,6 @@ const UserForm = ({props}) => {
 }
 
 const Survey = ({props}) => {
-    console.log( props.surveyNum )
-    console.log( props.totalSurvey )
 
     if( props.surveyNum < props.totalSurvey ){
         return(<>
