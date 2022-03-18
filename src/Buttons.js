@@ -150,7 +150,7 @@ const Buttons = ({props}) => {
                 
                 {/* <Previous props={props}/> */}
                 {/* <Log props={props}/> */}
-                <Skip props={props} />
+                {/* <Skip props={props} /> */}
 
                 <Next props = {props}/>
             </div>
