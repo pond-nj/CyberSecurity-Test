@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/CyberSecurity-Test/static/css/main.825e3115.css",
-    "main.js": "/CyberSecurity-Test/static/js/main.f608d07a.js",
+    "main.css": "/CyberSecurity-Test/static/css/main.9155ca47.css",
+    "main.js": "/CyberSecurity-Test/static/js/main.6faea184.js",
     "static/js/787.0a9f5c2f.chunk.js": "/CyberSecurity-Test/static/js/787.0a9f5c2f.chunk.js",
     "index.html": "/CyberSecurity-Test/index.html",
-    "main.825e3115.css.map": "/CyberSecurity-Test/static/css/main.825e3115.css.map",
-    "main.f608d07a.js.map": "/CyberSecurity-Test/static/js/main.f608d07a.js.map",
+    "main.9155ca47.css.map": "/CyberSecurity-Test/static/css/main.9155ca47.css.map",
+    "main.6faea184.js.map": "/CyberSecurity-Test/static/js/main.6faea184.js.map",
     "787.0a9f5c2f.chunk.js.map": "/CyberSecurity-Test/static/js/787.0a9f5c2f.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.825e3115.css",
-    "static/js/main.f608d07a.js"
+    "static/css/main.9155ca47.css",
+    "static/js/main.6faea184.js"
   ]
 }

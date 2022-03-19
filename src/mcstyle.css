@@ -144,7 +144,9 @@ section.question form.mc label{
 section.question form.mc label.hovereffect:hover,
 section.question form.mc label.hover_effect,
 section.question form.mc label.ui-radio-on{
-	background-color: #DDDDDD;
+	background-color: #17a1bc;
+	text-shadow: 0 0px ;
+	color: #ffffff;
 }
 
 section.question form.mc label.hovereffect:active{
@@ -217,7 +219,7 @@ input[type="submit"]{
 .ui-header h2.ui-title  { font-size: 1.4em; }
 .ui-header h3.ui-title  { font-size: 1.17em; }
 
-.ui-checkbox-off:after, .ui-btn.ui-radio-off:after{	opacity: .6; background: #17a1bc;}
+.ui-checkbox-off:after, .ui-btn.ui-radio-off:after{	opacity: .6;}
 
 .ui-header .ui-btn-left, .ui-header .ui-btn-right{ font-size: 0.7em; }
 
