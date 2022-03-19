@@ -25,9 +25,10 @@ const Next = ({props}) => {
                     props.goToNextQuestion()
                     props.resetSelected()
                     props.incrementValue(props.selectedValue)
-                    props.updateUserChoice(props.selectedValue)
+                    props.updateUserChoice(props.selectedAnswer)
                     document.getElementById("answer-0").checked="false"
                     document.getElementById("answer-1").checked="false"
+                    document.getElementById("answer-2").checked="false"
                 } else {
                     props.setSubmit(1)
                 }

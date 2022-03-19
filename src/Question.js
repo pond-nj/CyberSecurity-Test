@@ -23,9 +23,14 @@ const ChoiceList = ({props}) => {
 
     return(
         <form className="mc cf" onChange={(event) => {
+            //selectedAnswer: yes=1, no=0, not sure=2
+            //selectedValue: yes=1, no=0. not sure=0
+            //must reset form selected everytime in Next button by document.getElementById("answer-*").checked="false"
+
             props.setSelectedAnswer(event.target.getAttribute("index"))
-            console.log(event.target.getAttribute("index"))
-            props.setSelectedValue(event.target.getAttribute("index"))
+            console.log( (event.target.getAttribute("index").localeCompare("1")==0)? 1 : 0 )
+            props.setSelectedValue( (event.target.getAttribute("index").localeCompare("1")==0)? 1 : 0 )
+
             }}>
             <div className="ui-radio">
                 <label
@@ -52,6 +57,19 @@ const ChoiceList = ({props}) => {
                     index={0}
                     id={"answer-"+0}
                     value="No"/>
+            </div>
+            <div className="ui-radio">
+                <label
+                    htmlFor={"answer-"+2}
+                    className={"hovereffect ui-btn ui-corner-all ui-btn-inherit ui-btn-icon-left " + ((props.selectedAnswer==2)?"ui-radio-on":"ui-radio-off")}>
+                Not Sure
+                </label>
+                <input
+                    type="radio"
+                    name={"answer-"+props.questionNum}
+                    index={2}
+                    id={"answer-"+2}
+                    value="Not Sure"/>
             </div>
         </form>
     )
