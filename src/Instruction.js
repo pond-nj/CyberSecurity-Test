@@ -11,8 +11,8 @@ const Instruction = ({props}) => {
 					<ol className="instruction">
 						<li>Please do not click "go back" in your browser.</li>
 						<li>Please do not close this page until you have completed the survey.</li>
-				
-						<li>You cannot modify your answer after clicking "next" button.</li>				
+						<li>You cannot modify your answer after clicking "next" button.</li>		
+						<li>Please click proceed until you see "Submit" button</li>		
 					</ol>
 					{/*<p className="status">Loading your exercises...</p>*/ }
 					<p className="status">Please press "start" to begin.</p>

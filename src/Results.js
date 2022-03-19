@@ -33,7 +33,7 @@ const Results = ({props}) => {
             <ul>
                 {listArr}
             </ul>
-            <p>The survey has not ended yet. Please click "Proceed" to continue the survey.</p>
+            <p>The survey has NOT ENDED yet. Please click "Proceed" to continue the survey.</p>
         </section>
         <Buttons props={props}/ >
     </>)
