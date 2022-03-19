@@ -40,26 +40,42 @@ const FeedBackChoice = ({props}) => {
     </>)
 }
 
-const UserForm = ({props}) => {
+const UserForm = ({props}) => { //for user text input
     return(<>
         <form >
-            <label htmlFor="industry">{props.surveyForm[0].getElementsByTagName("industry")[0].textContent}</label>
-            <input type="text" name="industry" id="industry" value={props.userIndustry} placeholder="industry" onChange={(event)=>{
+            <label htmlFor="industry"
+            className=""
+            >{props.surveyForm[0].getElementsByTagName("industry")[0].textContent}</label>
+            <input type="text" name="industry" id="industry" value={props.userIndustry} placeholder="industry" 
+            className="ui-input-text ui-body-c ui-corner-all ui-shadow-inset"
+            onChange={(event)=>{
                 props.setUserInput(0,event.target.value)
             }}/>
 
-            <label htmlFor="position">{props.surveyForm[0].getElementsByTagName("position")[0].textContent}</label>
-            <input type="text" name="position" id="position" value={props.userPosition} placeholder="position" onChange={(event)=>{
+            <label htmlFor="position"
+            className=""
+            >{props.surveyForm[0].getElementsByTagName("position")[0].textContent}</label>
+            <input type="text" name="position" id="position" value={props.userPosition} placeholder="position"
+            className="ui-input-text ui-body-c ui-corner-all ui-shadow-inset"
+            onChange={(event)=>{
                 props.setUserInput(1,event.target.value)
             }}/>
 
-            <label htmlFor="location">{props.surveyForm[0].getElementsByTagName("location")[0].textContent}</label>
-            <input type="text" name="location" id="location" value={props.userLocation} placeholder="location" onChange={(event)=>{
+            <label htmlFor="location"
+            className=""
+            >{props.surveyForm[0].getElementsByTagName("location")[0].textContent}</label>
+            <input type="text" name="location" id="location" value={props.userLocation} placeholder="location"
+            className="ui-input-text ui-body-c ui-corner-all ui-shadow-inset"
+            onChange={(event)=>{
                 props.setUserInput(2,event.target.value)
             }}/>
 
-            <label htmlFor="comment">{props.surveyForm[0].getElementsByTagName("comment")[0].textContent}</label>
-            <textarea cols="40" rows="10" name="comment" id="comment" value={props.userComment} onChange={(event)=>{
+            <label htmlFor="comment"
+            className=""
+            >{props.surveyForm[0].getElementsByTagName("comment")[0].textContent}</label>
+            <textarea rows="8" name="comment" id="comment" value={props.userComment}
+            className="ui-input-text ui-body-c ui-corner-all ui-shadow-inset"
+            onChange={(event)=>{
                 props.setUserInput(3,event.target.value)
             }}></textarea>
         </form>

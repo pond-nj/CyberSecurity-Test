@@ -5,7 +5,7 @@ const Previous = ({props}) => {
         <button
             name="control"
             className="controlBtn ui-btn-right ui-btn ui-btn-b ui-btn-inline ui-mini ui-corner-all"
-            id="controlBtn-prev"
+            id="controlBtn-blue"
             value="prev"
             onClick={props.goToPrevQuestion}>
             Previous
@@ -18,7 +18,7 @@ const Next = ({props}) => {
         <button
             name="control"
             className="controlBtn ui-btn-right ui-btn ui-btn-b ui-btn-inline ui-corner-all ui-mini"
-            id="controlBtn-next"
+            id="controlBtn-blue"
             value="next"
             onClick={ () => {
                 if( props.selectedAnswer != -1 ){
@@ -41,7 +41,7 @@ const Skip = ({props}) => {
     return(<button
         name="control"
         className="controlBtn ui-btn-right ui-btn ui-btn-b ui-btn-inline ui-corner-all ui-mini"
-        id="controlBtn-next"
+        id="controlBtn-blue"
         value="next"
         onClick={ () => {
             if( props.selectedAnswer != -1 ){
@@ -60,7 +60,7 @@ const Log = ({props}) => {
     return(<button
         name="control"
         className="controlBtn ui-btn-right ui-btn ui-btn-b ui-btn-inline ui-corner-all ui-mini"
-        id="controlBtn-next"
+        id="controlBtn-blue"
         value="next"
         onClick={ () => {
             console.log("value " + props.selectedValue)
@@ -73,6 +73,7 @@ const Log = ({props}) => {
 const Submit = ({props}) => {
     return(<button
         className="controlBtn ui-btn-right ui-btn ui-btn-b ui-btn-inline ui-corner-all ui-mini"
+        id="controlBtn-blue"
         onClick={ () => {
 
             var jsondata = {
@@ -127,6 +128,7 @@ const Submit = ({props}) => {
 const ProceedToSurvey = ({props}) => {
     return(<button
         className="controlBtn ui-btn-right ui-btn ui-btn-b ui-btn-inline ui-corner-all ui-mini"
+        id="controlBtn-blue"
         onClick={ () => {
             props.goToNextQuestion()
             props.goToNextSurvey()
@@ -138,6 +140,7 @@ const ProceedToSurvey = ({props}) => {
 const NextSurvey = ({props}) => {
     return(<button
         className="controlBtn ui-btn-right ui-btn ui-btn-b ui-btn-inline ui-corner-all ui-mini"
+        id="controlBtn-blue"
         onClick={ () => {
             if( props.surveyNum < props.totalSurvey ){
                 if( props.selectedAnswer != -1 ){

@@ -31,7 +31,7 @@ const Start = ({props}) => {
                 name="control"
                 className="controlBtn ui-btn-right ui-btn ui-btn-b ui-btn-inline ui-corner-all ui-mini"
 				style={{display: "inline-block"}}
-                id="controlBtn-start"
+                id="controlBtn-blue"
                 value="start"
 				onClick={props.goToNextQuestion}>
 					Start</button>

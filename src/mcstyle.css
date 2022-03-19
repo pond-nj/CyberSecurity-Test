@@ -36,7 +36,7 @@ div#footer{
 
 section{
 	padding: 10px 20px;
-	border: 3px solid #666666;
+	border: 3px solid #17a1bc;
 	border-radius: 10px;
 	margin-bottom: 20px;
 }
@@ -178,6 +178,12 @@ div#wrapper button.controlBtn{
 	right: 0;
 }
 
+button#controlBtn-blue{
+	background: #17a1bc;
+	text-shadow: 0 0px #111;
+	border: none;
+}
+
 div#wrapper button.controlBtn:active{
 	background-color: #335657;
 }
@@ -211,12 +217,21 @@ input[type="submit"]{
 .ui-header h2.ui-title  { font-size: 1.4em; }
 .ui-header h3.ui-title  { font-size: 1.17em; }
 
-.ui-checkbox-off:after, .ui-btn.ui-radio-off:after{	opacity: .6; }
-
+.ui-checkbox-off:after, .ui-btn.ui-radio-off:after{	opacity: .6; background: #17a1bc;}
 
 .ui-header .ui-btn-left, .ui-header .ui-btn-right{ font-size: 0.7em; }
 
 div.ui-radio{ margin: 10px 0; }
+
+#header {
+	margin-top: 0;
+	background: #17a1bc;
+}
+
+div#header h2.ui-title{
+	color: #ffffff;
+	text-shadow: 0 0px 0 #eee;
+}
 
 /*********************************************************/
 /* Colours: #335657; #AAC789; #EBC48B; #C46F59; #A33238; */
