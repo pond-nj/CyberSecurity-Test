@@ -56,9 +56,9 @@
 	</question>
 
 	<feedbacks>
-		<weakText threshold="4">0-4 = weaker</weakText>
+		<weakText threshold="4">0-4 = inadequate</weakText>
 		<weakFeedback>
-			<head>Feedback: weaker security. &lt;br/ &gt;
+			<head>Feedback: inadequate security. &lt;br/ &gt;
 			How can company do to improve Cyber Security network? </head>
 				<li>Consistently update software to get the newest security patch </li>
 				<li>Get an over-the-counter Antivirus Program. &lt;br/ &gt;
