@@ -56,8 +56,8 @@
 	</question>
 
 	<feedbacks>
-		<weakText threshold="4">0-4 = inadequate</weakText>
-		<weakFeedback>
+		<inadequateText threshold="4">0-4 = inadequate</inadequateText>
+		<inadequateFeedback>
 			<head>Feedback: inadequate security. &lt;br/ &gt;
 			How can company do to improve Cyber Security network? </head>
 				<li>Consistently update software to get the newest security patch </li>
@@ -69,7 +69,7 @@
 					One of the best ways to protect your company from Cyber Attacks is to hire a company dedicated to Cyber Security. &lt;br/ &gt;
 					Protiviti Inc. is a global consulting organization and a subsidiary of Robert Half International, a human resource consulting firm. Protiviti Hong Kong is now anticipating business growth in a specific sector of Technology Consulting, Cyber Security. &lt;br/ &gt;
 					If interested, please feel free to contact Mr. Michael Pang, Managing Director, at +852 2238 0499 for more details. </li>
-		</weakFeedback>
+		</inadequateFeedback>
 
 		<moderateText threshold="8">5-8 = moderate</moderateText>
 		<moderateFeedback>
